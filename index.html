@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Nela</title>
+    <style>
+    body {
+        background-image: url('https://raw.githubusercontent.com/DzarelDeveloper/img/main/CrushDay.jpg');
+        background-size: cover; /* Untuk menyesuaikan ukuran gambar dengan layar */
+        background-repeat: no-repeat; /* Agar gambar tidak diulang */
+    }
+    
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    .stiker {
+        margin-left:auto;
+        margin-right:auto;
+        box-shadow: 0 4px 30px rgba(255,255,255, 0.3);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter:blur(5px);
+        width:90px;height:90px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;padding:10px;
+        margin-bottom:20px;
+        transition:all 1s ease}
+    
+    .h1 {
+        color:white;
+    }
+   
+    .tombol {
+        background-color: pink;
+        color:white;
+    }
+
+  
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="h1" id="message">I have a crush on you</h1>
+        <h1 class="h1" id="message1">lu mau gak jadi pacar gua?</h1>
+        <img class="stiker" id="loveImage" src="https://raw.githubusercontent.com/Ratmus19/Foto/main/panda1.gif" alt="Crush Image">
+        <br>
+        <button class="tombol" id="yesButton" onclick="showLove()">MAU</button>
+        <button class="tombol" id="noButton" onclick="hideButtons()">GAKMAU</button>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById('message').innerText = "yesss kita jadiannn";
+            document.getElementById('message1').innerText = "🩷";
+            document.getElementById('loveImage').src = "https://raw.githubusercontent.com/Ratmus19/Foto/main/panda2.gif" ;
+            document.getElementById('yesButton').innerHTML = "KIRIM";
+            document.getElementById('yesButton').onclick = function() { replyWhatsApp() };
+            document.getElementById('noButton').style.display = "none";
+        }
+
+        function hideButtons() {
+            document.getElementById('message').innerText = "Yahhhh";
+            document.getElementById('message1').innerText = "Ditolakkkk";
+            document.getElementById('loveImage').src = "https://raw.githubusercontent.com/Ratmus19/Foto/main/panda3.gif" ;
+            document.getElementById('yesButton').innerHTML = "KIRIM";
+            document.getElementById('yesButton').onclick = function() { replayWhatsApp() };
+            document.getElementById('noButton').style.display = "none";
+        }
+    
+        function replayWhatsApp() {
+            var phoneNumber = "6285694421592"; // Ganti dengan nomor WhatsApp yang ingin Anda balas
+            var message = "Maaf yaa 🙏🏼🙏🏼"; // Isi pesan balasan yang ingin Anda kirim
+
+            var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+            window.open(url);
+        }
+
+        function replyWhatsApp() {
+            var phoneNumber = "6285694421592"; // Ganti dengan nomor WhatsApp yang ingin Anda balas
+            var message = "Iya, Aku Mau! ❤️"; // Isi pesan balasan yang ingin Anda kirim
+
+            var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+            window.open(url);
+        }
+    </script>
+</body>
+
+</html>
